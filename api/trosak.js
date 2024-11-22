@@ -1,8 +1,12 @@
 // const express = require("express");
 const { Router } = require("express");
 const TrosakTable = require("../models/trosakModel");
+const authMiddleware = require("../middleware/authMiddleware");
 
 var router = Router();
+
+router.use(authMiddleware);
+
 
 router.get("/", (req, res) => {
   TrosakTable.find()

@@ -1,0 +1,18 @@
+config:
+  target: 'http://localhost:3000'  # Your Node.js backend URL
+  phases:
+    - duration: 60  # Duration of the test in seconds
+      arrivalRate: 5  # Number of new users per second
+
+scenarios:
+  - flow:
+      - post:
+          url: "/api/user/login"
+          json:
+            username: "testuser"
+            password: "password123"
+      - get:
+          url: "/api/trosak"
+      - get:
+          url: "/api/table"
+      
