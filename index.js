@@ -29,13 +29,13 @@ mongoose
 // Test logging to ensure execution reaches this point
 console.log("Mongoose connection initiated. Waiting for MongoDB connection...");
 
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 500, // Limit each IP to 200 requests per windowMs
-  message: 'Too many requests, please try again later.',
-});
+// const limiter = rateLimit({
+//   windowMs: 15 * 60 * 1000, // 15 minutes
+//   max: 500, // Limit each IP to 200 requests per windowMs
+//   message: 'Too many requests, please try again later.',
+// });
 
-app.use('/api', limiter);
+// app.use('/api', limiter);
 
 
 // Middleware
